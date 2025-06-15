@@ -3,58 +3,41 @@ using MerchantRPG.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-// Database configuration
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-if (string.IsNullOrEmpty(connectionString))
-{
-    throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-}
-
-builder.Services.AddDbContext<GameDbContext>(options =>
-    options.UseNpgsql(connectionString));
-
-// CORS configuration for frontend
+// Add CORS policy for your React app
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://*.vercel.app")
+        policy.WithOrigins("http://localhost:50320", "https://localhost:50320")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
     });
 });
 
-// SignalR for real-time updates
-builder.Services.AddSignalR();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Add your database context - THIS WAS MISSING!
+builder.Services.AddDbContext<GameDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// Enable CORS
-app.UseCors("AllowFrontend");
-
 app.UseHttpsRedirection();
-
+app.UseCors("AllowReactApp");
 app.UseAuthorization();
 
 app.MapControllers();
-
-// Add a health check endpoint
-app.MapGet("/health", () => "Healthy");
+app.MapGet("/api/health", () => "Healthy");
 
 app.Run();

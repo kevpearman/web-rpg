@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchantRPG.API", "MerchantRPG.API.csproj", "{8C99108C-AF91-46C8-83A6-C0A60FFA59FE}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "front-end", "..\..\front-end\front-end.esproj", "{2D551874-F0CC-1788-598F-5CD7D6A81DDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{8C99108C-AF91-46C8-83A6-C0A60FFA59FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C99108C-AF91-46C8-83A6-C0A60FFA59FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C99108C-AF91-46C8-83A6-C0A60FFA59FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
