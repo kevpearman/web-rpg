@@ -4,25 +4,14 @@ namespace MerchantRPG.API.Models
 {
     public class GameMap
     {
-        [Key]
-        [StringLength(50)]
         public string Id { get; set; } = string.Empty;
-        
-        [Required]
-        [StringLength(100)]
         public string Name { get; set; } = string.Empty;
-        
-        [StringLength(20)]
-        public string Difficulty { get; set; } = "easy";
-        
-        public int RequiredLevel { get; set; } = 1;
-        public int Duration { get; set; } // in seconds
-        
-        public string RewardRanges { get; set; } = "{}"; // JSON string
-        
+        public string Difficulty { get; set; } = string.Empty;
+        public int RequiredLevel { get; set; }
+        public int Duration { get; set; } // Keep this for backwards compatibility
+        public int Distance { get; set; } // NEW
+        public int BaseCompletionTime { get; set; } // NEW
+        public string RewardRanges { get; set; } = string.Empty; // JSON
         public string? UnlocksMapId { get; set; }
-        
-        // Navigation properties
-        public GameMap? UnlocksMap { get; set; }
     }
 }

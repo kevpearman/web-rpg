@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchantRPG.API", "Merchant
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "front-end", "..\..\front-end\front-end.esproj", "{2D551874-F0CC-1788-598F-5CD7D6A81DDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineRPG.Tests", "..\OnlineRPG.Tests\OnlineRPG.Tests.csproj", "{2D1EC0E4-520A-433D-9A56-53520E93410D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D551874-F0CC-1788-598F-5CD7D6A81DDB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2D1EC0E4-520A-433D-9A56-53520E93410D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D1EC0E4-520A-433D-9A56-53520E93410D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D1EC0E4-520A-433D-9A56-53520E93410D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D1EC0E4-520A-433D-9A56-53520E93410D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

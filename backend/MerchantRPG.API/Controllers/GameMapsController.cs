@@ -30,7 +30,7 @@ namespace MerchantRPG.API.Controllers
                     m.Difficulty,
                     m.RequiredLevel,
                     m.RewardRanges,
-                    m.UnlocksMap,
+                    m.UnlocksMapId,
                 })
                 .ToListAsync();
 

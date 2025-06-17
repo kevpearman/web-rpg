@@ -6,22 +6,17 @@ namespace MerchantRPG.API.Models
     {
         public int Id { get; set; }
         public int PlayerId { get; set; }
-        
-        [Required]
-        [StringLength(50)]
         public string Name { get; set; } = string.Empty;
-        
-        public int Level { get; set; } = 1;
-        public int Strength { get; set; } = 10;
-        public int Agility { get; set; } = 10;
-        public int Intelligence { get; set; } = 10;
-        public int Experience { get; set; } = 0;
-        
-        public bool IsOnMission { get; set; } = false;
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        
+        public int Level { get; set; }
+        public int Strength { get; set; }
+        public int Agility { get; set; }
+        public int Intelligence { get; set; }
+        public int Experience { get; set; }
+        public bool IsOnMission { get; set; }
+        public int Speed { get; set; } // NEW
+        public DateTime CreatedAt { get; set; }
+
         // Navigation properties
-        public Player Player { get; set; } = null!;
-        public List<Mission> Missions { get; set; } = new();
+        public Player? Player { get; set; }
     }
 }
